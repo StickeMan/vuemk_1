@@ -32,6 +32,7 @@ export default {
     return {
       items: [],
       total: 0,
+      subItems:[],
     };
   },
   created() {
@@ -50,6 +51,12 @@ export default {
         console.log(id);
         this.items.splice(id, 1);
         localStorage.setItem("storeUT", JSON.stringify(this.items));
+      }
+    },
+    getTotal() {
+      this.total = 0;
+      for (var x = 0; x < this.subItems.length; x++) {
+        this.total += this.subItems[x].price * this.subItems[x].amount;
       }
     },
   },

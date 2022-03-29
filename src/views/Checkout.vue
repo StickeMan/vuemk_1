@@ -6,6 +6,7 @@
           <th>Product name</th>
           <th>Amount</th>
           <th>Price</th>
+          <th>Total</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -14,6 +15,7 @@
           <td>{{ item.title }}</td>
           <td>{{ item.amount }}</td>
           <td>{{ item.price }}</td>
+          <td>{{ item.total }}</td>
           <td>
             <button class="btn btn-warning" v-on:click="deleteItem(index)">
               Del

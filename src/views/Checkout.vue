@@ -15,7 +15,7 @@
           <td>{{ item.title }}</td>
           <td>{{ item.amount }}</td>
           <td>{{ item.price }}</td>
-          <td>{{ item.getTotal }}</td>
+          <td>{{ index.getTotal }}</td>
           <td>
             <button class="btn btn-warning" v-on:click="deleteItem(index)">
               Del
@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       items: [],
+      total: 0,
     };
   },
   created() {

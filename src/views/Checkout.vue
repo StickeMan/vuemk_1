@@ -6,7 +6,6 @@
           <th>Product name</th>
           <th>Amount</th>
           <th>Price</th>
-          <th>Total</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -15,7 +14,6 @@
           <td>{{ item.title }}</td>
           <td>{{ item.amount }}</td>
           <td>{{ item.price }}</td>
-          <td>{{ item.getTotal }}</td>
           <td>
             <button class="btn btn-warning" v-on:click="deleteItem(index)">
               Del
@@ -31,8 +29,6 @@ export default {
   data() {
     return {
       items: [],
-      total: 0,
-      subItems:[],
     };
   },
   created() {
@@ -51,12 +47,6 @@ export default {
         console.log(id);
         this.items.splice(id, 1);
         localStorage.setItem("storeUT", JSON.stringify(this.items));
-      }
-    },
-    getTotal() {
-      this.total = 0;
-      for (var x = 0; x < this.subItems.length; x++) {
-        this.total += this.subItems[x].price * this.subItems[x].amount;
       }
     },
   },

@@ -28,16 +28,6 @@ const routes = [
     name: "checkout",
     component: () => import("../views/Checkout.vue"),
   },
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("../views/Login.vue"),
-  },
-  {
-    path: "/logout",
-    name: "logout",
-    component: () => import("../views/Logout.vue"),
-  },
 ];
 
 const router = new VueRouter({
